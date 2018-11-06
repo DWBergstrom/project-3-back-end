@@ -97,7 +97,13 @@ router.patch('/orders/:id', requireToken, (req, res) => {
       })
 
       // pass the result of Mongoose's `.update` to the next `.then`
-      return order.update(req.body.order)
+      // return order.update(req.body.order)
+
+      // console.log('order in req.body ', req.body.order)
+      Order.findOneAndUpdate(
+        { _id: req.params.id},
+        { $push: { products: req.body.order.products} },
+        { new: true }).exec()
     })
     // if that succeeded, return 204 and no JSON
     .then(() => res.sendStatus(204))

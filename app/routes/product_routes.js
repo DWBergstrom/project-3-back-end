@@ -94,7 +94,7 @@ router.patch('/products/:id', (req, res) => {
     .catch(err => handle(err, res))
 })
 
-// DESTROY  
+// DESTROY
 // DELETE /products/5a7db6c74d55bc51bdf39793
 router.delete('/products/:id', (req, res) => {
   Product.findById(req.params.id)
