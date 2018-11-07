@@ -101,8 +101,8 @@ router.patch('/orders/:id', requireToken, (req, res) => {
 
       // console.log('order in req.body ', req.body.order)
       Order.findOneAndUpdate(
-        { _id: req.params.id},
-        { $push: { products: req.body.order.products} },
+        { _id: req.params.id },
+        { $push: { products: req.body.order.products } },
         { new: true }).exec()
     })
     // if that succeeded, return 204 and no JSON
