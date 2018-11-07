@@ -1,10 +1,11 @@
 #!/bin/sh
 
 API="http://localhost:4741"
-URL_PATH="/products"
+URL_PATH="/orders"
 
-curl "${API}${URL_PATH}/${ID}" \
+curl "${API}${URL_PATH}/${ORDER_ID}" \
   --include \
   --request GET \
+  --header "Authorization: Bearer ${TOKEN}"
 
 echo
