@@ -7,10 +7,10 @@ const stripe = require('stripe')(keySecret)
 app.set('view engine', 'pug')
 app.use(require('body-parser').urlencoded({extended: false}))
 
-app.get('/', (req, res) =>
+app.get('/stripe', (req, res) =>
   res.render('index.pug', {keyPublishable}))
 
-app.post('/charge', (req, res) => {
+app.post('/charges', (req, res) => {
   let amount = 500
 
   stripe.customers.create({
@@ -27,4 +27,6 @@ app.post('/charge', (req, res) => {
     .then(charge => res.render('charge.pug'))
 })
 
-app.listen(4567)
+app.listen(7165)
+
+module.exports = app
