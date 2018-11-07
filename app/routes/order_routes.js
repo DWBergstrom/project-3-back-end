@@ -80,6 +80,8 @@ router.patch('/orders/:id', requireToken, (req, res) => {
   // owner, prevent that by deleting that key/value pair
   delete req.body.order.owner
 
+  console.log('req.body in update order route is ', req.body)
+
   Order.findById(req.params.id)
     .then(handle404)
     .then(order => {
