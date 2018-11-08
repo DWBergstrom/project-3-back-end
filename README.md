@@ -15,12 +15,15 @@ https://github.com/ga-wdi-boston-front-and-center/project-3-front-end
 
 
 # The Application
-Nozama is an e-commerce platform that allows users to purchase items online.
+Nozama is an e-commerce platform that allows users to purchase products online.
 
 # The Process
 
 
 # Unsolved Issues
+Styling: We want to use bootstrap to enable the user to traverse our application cleaner with tabs and pop up windows with descriptions of the products.
 
+
+Version 2: We want to be able to search products by their names in a search bar. As well as organize products by categories and remove individual items from the order.
 # Entity Relationship Diagram
 ![Imgur](https://i.imgur.com/fpxF1hW.jpg)
