@@ -33,6 +33,9 @@ const router = express.Router()
 router.get('/orders', requireToken, (req, res) => {
   Order.find().populate('products')
     .then(orders => {
+      // pass the `req` object and the Mongoose record to `requireOwnership`
+      // it will throw an error if the current user isn't the owner
+      // requireOwnership(req, orders)
       // `orders` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
       // apply `.toObject` to each one
