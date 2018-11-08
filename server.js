@@ -11,7 +11,6 @@ const productRoutes = require('./app/routes/product_routes')
 const orderRoutes = require('./app/routes/order_routes')
 const stripeRoutes = require('./app/routes/stripe_routes')
 
-
 // require database configuration logic
 // `db` will be the actual Mongo URI as a string
 const db = require('./config/db')
