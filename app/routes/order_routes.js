@@ -89,6 +89,7 @@ router.post('/orders', requireToken, (req, res) => {
 // UPDATE
 // PATCH /orders/5a7db6c74d55bc51bdf39793
 router.patch('/orders/:id', requireToken, (req, res) => {
+  console.log('req.body in order patch is ', req.body)
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   delete req.body.order.owner
