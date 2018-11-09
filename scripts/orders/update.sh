@@ -12,8 +12,7 @@ curl "${API}${URL_PATH}/${ORDER_ID}" \
     "order": {
       "products": "'"${P_ID}"'",
       "total": "'"${TOTAL}"'",
-      "purchased": "'"${PURCHASED}"'",
-      "action": "'"${ACTION}"'"
+      "purchased": "'"${PURCHASED}"'"
     }
   }'
 
