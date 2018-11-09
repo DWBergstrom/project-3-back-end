@@ -27,7 +27,7 @@ router.get('/stripe', requireToken, (req, res) => {
 })
 
 router.post('/charges', (req, res) => {
-  console.log('request body is ', req.body)
+  // console.log('request body is ', req.body)
 
   // console.log('req email is ', req.body.email)
   // console.log('req token is ', req.body.source[0])
@@ -35,10 +35,10 @@ router.post('/charges', (req, res) => {
   const stripeEmail = req.body.email
   const amount = req.body.amount
   const stripeToken = req.body.source.id
-  const nlStripeCard = req.body.source.card.id
-  const stripeCard = nlStripeCard.replace(/\n$/, '')
+  // const nlStripeCard = req.body.source.card.id
+  // const stripeCard = nlStripeCard.replace(/\n$/, '')
 
-  console.log('req card id is ', stripeCard)
+  // console.log('req card id is ', stripeCard)
   // console.log('keySecret is ', keySecret)
 
   stripe.customers.create({
@@ -47,7 +47,7 @@ router.post('/charges', (req, res) => {
   })
     .then(customer => {
       let customerId = customer.id
-      console.log(customerId)
+      // console.log(customerId)
       return customerId
     })
     .then(customerId =>
@@ -57,9 +57,9 @@ router.post('/charges', (req, res) => {
         currency: 'usd',
         customer: customerId
       }))
+    // .then(() => res.sendStatus(204))
     .then(charge => {
-      console.log(charge)
-      // res.render('charge.pug')
+      res.sendStatus(201)
     })
     .catch(console.error)
 })
