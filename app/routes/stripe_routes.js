@@ -3,7 +3,7 @@ const app = require('express')()
 const dotenv = require('dotenv')
 dotenv.config()
 const keyPublishable = process.env.PUBLISHABLE_KEY
-const keySecret = process.env.SECRET_KEY
+const keySecret = process.env.STRIPE_SECRET_KEY
 const passport = require('passport')
 const handle = require('../../lib/error_handler')
 const customErrors = require('../../lib/custom_errors')
